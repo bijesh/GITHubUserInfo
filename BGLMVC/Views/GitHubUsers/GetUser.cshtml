@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "GetUser";
+}
+
+<h2>GitHubUser Info</h2>
+
+@model BGLMVC.ViewModel.GitHubUserViewModel
+
+<table class="table">
+    <tr>
+        <th>
+            User Name
+        </th>
+        <th>
+            Location
+        </th>
+        <th>
+           Avatar
+        </th>
+    </tr>
+    <tr>
+
+        <td>
+            @Html.DisplayFor(model => model.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Location)
+        </td>
+        <td>
+            <img src=@Model.AvatarUrl />
+        </td>
+
+
+    </tr>
+ </table>
+  <table class="table">
+        <tr>
+            <th>
+                Repository Name
+            </th>
+
+            <th>
+                Stargazers Count
+            </th>
+        </tr>
+        @foreach (var item in Model.RepositoryList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RepositoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StargazerCount)
+                </td>
+
+            </tr>
+
+        }
+    </table>
+
+

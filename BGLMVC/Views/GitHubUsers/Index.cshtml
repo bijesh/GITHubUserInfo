@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>GitHub user</h2>
+@using (Html.BeginForm("GetUser", "GitHubUsers", FormMethod.Post))
+{
+<div>
+    <input name="userName" />
+    <input name="submit" type="submit" id="submit" value="Search" />
+</div>
+}

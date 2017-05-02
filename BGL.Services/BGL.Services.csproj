@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7329E51-69D5-4F99-B490-ADBEB7016D1A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BGL.Services</RootNamespace>
+    <AssemblyName>BGL.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GitHubRepoConfig.cs" />
+    <Compile Include="GitHubRepoService.cs" />
+    <Compile Include="GitHubUserInfoService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModelFactory\GitHubUserViewModelFactory.cs" />
+    <Compile Include="ViewModelService\GitHubUserViewModelService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BGL.Services.Contract\BGL.Services.Contract.csproj">
+      <Project>{a3b309a6-8480-4144-bd60-a27b340c76b5}</Project>
+      <Name>BGL.Services.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGL.Services.Interface\BGL.Services.Interface.csproj">
+      <Project>{0451d9c9-735f-4d35-b8d3-efea34ce77df}</Project>
+      <Name>BGL.Services.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGL.Utilities\BGL.Utilities.csproj">
+      <Project>{5d9ee477-c6f5-401b-833c-464aab3292d9}</Project>
+      <Name>BGL.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGL.ViewModel\BGL.ViewModel.csproj">
+      <Project>{698A8402-7A48-474F-BEB2-8F2FAF37496A}</Project>
+      <Name>BGL.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
